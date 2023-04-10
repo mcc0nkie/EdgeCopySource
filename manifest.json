@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Copy with Source",
+  "version": "1.0",
+  "description": "Copies highlighted text and appends the source URL.",
+  "permissions": ["activeTab", "clipboardWrite", "contextMenus"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Copy with Source"
+  },
+  "commands": {
+    "copy_with_source": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C"
+      },
+      "description": "Copy with Source"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
+
